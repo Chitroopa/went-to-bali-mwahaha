@@ -1,2 +1,4 @@
-$(".add-product-link").show();
-$(".add-product").html('<%= j render "layouts/errors", :object => @product %> ');
+$(document).ready(function() {
+  $(".add-product-link").show();
+  $(".add-product").html('<%= j render "layouts/errors", :object => @product %>');
+});

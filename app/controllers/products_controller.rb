@@ -26,6 +26,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     if @product.save
       respond_to do |format|
+        flash[:success] = "New product created successfully!"
         format.html { redirect_to '/'}
         format.js
       end
@@ -35,13 +36,15 @@ class ProductsController < ApplicationController
         format.js
       end
     end
-    
+
   end
 
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
+
     respond_to do |format|
+
       format.html { redirect_to admin_path}
       format.js
     end
@@ -54,7 +57,8 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update(product_params)
-        redirect_to admin_path
+      flash[:success] = "Product updated successfully!"
+      redirect_to admin_path
     else
       render :edit
     end

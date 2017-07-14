@@ -6,7 +6,7 @@
         <p><%= product.description %></p>
         <p><%= number_to_currency product.price %></p>
         <%= link_to "See more details...", product_path(product), remote: true%>
-        <% if admin %>
+        <% if admin && @admin %>
         <br>
           <p>
             <%= link_to "Edit", edit_product_path(product),:class=>"waves-effect waves-light btn"%>
