@@ -24,10 +24,16 @@
   </nav>
 
   <body>
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, id: "flash_#{name}" %>
-    <% end %>
     <div class="container">
+      <% flash.each do |name, msg| %>
+        <div class="row">
+          <div class="col l12 m6">
+            <div class="card-panel grey lighten-5">
+                <h6><%= content_tag :div, msg, id: "flash_#{name}" %></h6>
+            </div>
+          </div>
+        </div>
+      <% end %>
       <%= yield %>
     </div>
   </body>
