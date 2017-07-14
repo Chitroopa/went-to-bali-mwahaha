@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post '/sign_in' => 'sessions#create'
   get 'sign_out' => 'sessions#destroy'
 
-  get '/admin' => 'users#admin'
+  get '/admin' => 'admins#show'
 
   resources :products
   resources :order_items

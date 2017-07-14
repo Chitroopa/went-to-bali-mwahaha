@@ -1,2 +1,3 @@
 <h3>Admin</h3>
 <%= link_to "Add product", new_product_path %>
+<%= render "product_list", :products => @products, :order_item => @order_item %>
