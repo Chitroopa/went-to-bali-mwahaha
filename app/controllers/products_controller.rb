@@ -16,15 +16,26 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    respond_to do |format|
+      format.html { render :new}
+      format.js
+    end
   end
 
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to '/'
+      respond_to do |format|
+        format.html { redirect_to '/'}
+        format.js
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { render :new }
+        format.js
+      end
     end
+    
   end
 
   def destroy
@@ -38,6 +49,15 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    if @product.update(product_params)
+        redirect_to admin_path
+    else
+      render :edit
+    end
   end
 
   private

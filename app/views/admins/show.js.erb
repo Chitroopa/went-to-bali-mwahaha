@@ -1,0 +1,5 @@
+$(document).ready(function() {
+  $(".modal-content").html('<%= j render "display_product_details", :product => @product %><div class="modal-footer"><a href="#!" class="modal-action modal-close waves-effect waves-light btn">Close</a> </div>');
+  $(".modal").modal();
+  $('#modal1').modal("open");
+});

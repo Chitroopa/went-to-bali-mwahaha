@@ -3,6 +3,6 @@
   Description: <%= f.text_field :description %>
   Price: <%= f.text_field :price %>
   Image: <%= f.file_field :image %><br><br>
-  <%= f.submit "Submit", :class=>"waves-effect waves-light btn"%>
+  <%= f.submit "Submit", :class=>"waves-effect waves-light btn", remote: true%>
 
 <% end %>

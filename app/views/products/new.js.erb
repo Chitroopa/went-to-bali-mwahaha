@@ -1,0 +1,2 @@
+$(".add-product-link").hide();
+$(".add-product").html('<%= j render "layouts/errors", :object => @product %> <%= j render "new_product", :product => @product %>');

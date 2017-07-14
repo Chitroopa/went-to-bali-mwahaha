@@ -1,3 +1,11 @@
 <h3>Admin</h3>
-<%= link_to "Add product", new_product_path %>
+<%= link_to "Add product", new_product_path, remote: true, :class=>"add-product-link" %>
+<div class="add-product">
+
+</div>
+<div id="modal1" class="modal">
+  <div class="modal-content">
+
+  </div>
+</div>
 <%= render "products/product_list", :products => @products, :order_item => @order_item %>
