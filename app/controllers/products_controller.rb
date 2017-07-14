@@ -8,6 +8,10 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    respond_to do |format|
+      format.html { render :show}
+      format.js
+    end
   end
 
   def new

@@ -1,8 +1,2 @@
-<div class="row">
-  <div class="section">
-    <h4><%= @product.name %></h4>
-    <%= image_tag @product.image.url(:medium) %>
-    <p><%= @product.description %></p>
-    <p><%= number_to_currency @product.price %></p>
-  </div>
-</div>
+
+<%= render "display_product_details", :product => @product %>
