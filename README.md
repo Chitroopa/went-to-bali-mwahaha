@@ -21,7 +21,6 @@ E-commerce site. Uses `bcrypt` for user authentication and `materialize` for sty
 
 | other refactoring | Status |
 |-------------------|--------|
-
 | Ensure that users can't order a negative number of items.| Completed |
 | Add flash messages for signing up, signing in and signing out.| Completed |
 | Add product update and delete functionality for admins.| Completed |
